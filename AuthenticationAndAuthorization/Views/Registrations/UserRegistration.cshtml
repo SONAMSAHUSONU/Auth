@@ -1,0 +1,47 @@
+﻿@using AuthenticationAndAuthorization.Models
+@model List<UserLoginModel>
+@{
+                
+
+                ViewBag.Title = "UserRegistration";
+}
+
+<h2>UserRegistration</h2>
+
+<body>
+
+    <table class="table-bordered table-hover table-striped container">
+        <tr>
+            <th class="col-lg-2">UserName</th>
+            <th class="col-lg-2">UserEmail</th>
+            <th class="col-lg-2">UserPassword</th>
+            <th class="col-lg-2">Role</th>
+           
+        </tr>
+
+    </table>
+    @{
+        List<UserLoginModel> userLoginModel = Model;
+        foreach (AuthenticationAndAuthorization.Models.UserLoginModel p in userLoginModel)
+        {
+            <table class="table-bordered table-hover table-striped container">
+                <tr>
+                    <td class="col-lg-2">@p.UserName </td>
+                    <td class="col-lg-2">@p.UserEmail</td>
+                    <td class="col-lg-2">@p.Password </td>
+                    <td class="col-lg-2">@p.Role </td>
+                   
+                </tr>
+
+            </table>
+
+
+
+        }
+        @Html.ActionLink("UserRegistration", "Registration", "Registrations")
+
+
+
+    }
+
+</body>
